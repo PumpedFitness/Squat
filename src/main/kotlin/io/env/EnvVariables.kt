@@ -8,28 +8,22 @@ enum class EnvVariables(
     val default: String? = null,
     val requiresNonEmpty: Boolean = true,
 ) {
-    BB_MODE(EnvType.STRING, "DEV"),
+    SQUAT_MODE(EnvType.STRING, "DEV"),
 
-    BB_DB_TYPE(EnvType.STRING),
-    BB_DB_HOST(EnvType.STRING),
-    BB_DB_PORT(EnvType.INT),
-    BB_DB_DATABASE(EnvType.STRING),
-    BB_DB_USER(EnvType.STRING),
-    BB_DB_PASSWORD(EnvType.STRING),
+    SQUAT_DB_TYPE(EnvType.STRING),
+    SQUAT_DB_HOST(EnvType.STRING),
+    SQUAT_DB_PORT(EnvType.INT),
+    SQUAT_DB_DATABASE(EnvType.STRING),
+    SQUAT_DB_USER(EnvType.STRING),
+    SQUAT_DB_PASSWORD(EnvType.STRING),
 
-    BB_REDIS_HOST(EnvType.STRING),
-    BB_REDIS_PORT(EnvType.STRING),
+    SQUAT_REDIS_HOST(EnvType.STRING),
+    SQUAT_REDIS_PORT(EnvType.STRING),
 
-    BB_JWT_SECRET(EnvType.STRING),
-    BB_JWT_AUDIENCE(EnvType.STRING),
-    BB_JWT_REALM(EnvType.STRING),
-    BB_JWT_DOMAIN(EnvType.STRING),
-    BB_JWT_EXPIRY(EnvType.NUMBER),
-
-    BB_RABBITMQ_USER(EnvType.STRING),
-    BB_RABBITMQ_PASSWORD(EnvType.STRING),
-    BB_RABBITMQ_PORT(EnvType.NUMBER),
-    BB_RABBITMQ_HOST(EnvType.STRING),
+    SQUAT_RABBITMQ_USER(EnvType.STRING),
+    SQUAT_RABBITMQ_PASSWORD(EnvType.STRING),
+    SQUAT_RABBITMQ_PORT(EnvType.NUMBER),
+    SQUAT_RABBITMQ_HOST(EnvType.STRING),
 }
 
 enum class EnvType(val cast: (value: String) -> Boolean) {

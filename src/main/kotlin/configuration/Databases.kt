@@ -13,7 +13,7 @@ fun Application.configureDatabases(testing: Boolean = false) {
         log.info("Using H2 for DB")
         H2Adapter()
     } else {
-        DatabaseAdapterFetcher.fetchAdapterForDB(secrets[EnvVariables.BB_DB_TYPE])
+        DatabaseAdapterFetcher.fetchAdapterForDB(secrets[EnvVariables.SQUAT_DB_TYPE])
     }
 
     val datasource = adapter.asDataSource(this)

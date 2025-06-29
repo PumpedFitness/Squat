@@ -7,34 +7,11 @@ services:
       MARIADB_PASSWORD: "${BB_DB_PASSWORD}"
       MARIADB_DATABASE: "${BB_DB_DATABASE}"
     ports:
-      - "${BB_DB_PORT}:3306"
+      - "${BB_DB_PORT}:${BB_DB_PORT}"
     volumes:
       - mariadb_data:/bitnami/mariadb/data
     networks:
       - app-network
-
-  redis:
-    image: redis:7
-    ports:
-      - "${BB_REDIS_PORT}:6379"
-    volumes:
-      - redis_data:/data
-    networks:
-      - app-network
-
-  rabbitmq:
-    image: rabbitmq:4.1.0-management
-    restart: always
-    ports:
-      - ${BB_RABBITMQ_PORT}:5672
-      - ${BB_RABBITMQ_HTTP_PORT}:15672
-    environment:
-      RABBITMQ_DEFAULT_USER: ${BB_RABBITMQ_USER}
-      RABBITMQ_DEFAULT_PASS: ${BB_RABBITMQ_PASSWORD}
-    volumes:
-      - rabbitmq-lib:/var/lib/rabbitmq/
-    networks:
-      app-network:
 
 volumes:
   mariadb_data:
@@ -44,5 +21,7 @@ volumes:
   rabbitmq-lib:
 
 networks:
+  pumped-network:
+    external: true
   app-network:
     driver: bridge

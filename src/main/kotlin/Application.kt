@@ -5,7 +5,6 @@ import io.ktor.server.cio.*
 import io.ktor.server.engine.*
 import ord.pumped.configuration.*
 import ord.pumped.configuration.middlewares.configureMiddlewares
-import ord.pumped.routes.configureRoutes
 
 fun main() {
     embeddedServer(CIO, port = 8080, host = "0.0.0.0", module = Application::module)
@@ -19,16 +18,9 @@ fun Application.module(testing: Boolean = false) {
     configureRabbitMQ()
 
     configureKoin()
-    configureHTTP()
-    configureSecurity()
     configureSerialization()
     configureAdministration()
     configureAkkurate()
-    configureRouting()
-    configureRoutes()
-    configureMiddlewares()
-    configureWebsocket()
 
-    configureOpenAPI()
-    configureSwagger()
+    configureMiddlewares()
 }

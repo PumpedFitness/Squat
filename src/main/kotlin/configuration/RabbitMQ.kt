@@ -7,7 +7,7 @@ import ord.pumped.io.env.EnvVariables
 fun Application.configureRabbitMQ() {
     log.info("Connecting to RabbitMQ")
     install(RabbitMQ) {
-        uri = "amqp://${secrets[EnvVariables.BB_RABBITMQ_USER]}:${secrets[EnvVariables.BB_RABBITMQ_PASSWORD]}@${secrets[EnvVariables.BB_RABBITMQ_HOST]}:${secrets[EnvVariables.BB_RABBITMQ_PORT]}"
+        uri = "amqp://${secrets[EnvVariables.SQUAT_RABBITMQ_USER]}:${secrets[EnvVariables.SQUAT_RABBITMQ_PASSWORD]}@${secrets[EnvVariables.SQUAT_RABBITMQ_HOST]}:${secrets[EnvVariables.SQUAT_RABBITMQ_PORT]}"
         defaultConnectionName = "default-connection"
         dispatcherThreadPollSize = 4
         tlsEnabled = false
