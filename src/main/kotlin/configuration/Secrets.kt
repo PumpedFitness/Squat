@@ -8,7 +8,7 @@ fun Application.configureSecrets(testing: Boolean = false) {
     val adapterType = if (testing)
         "env"
     else
-        System.getenv("BB_SECRET_ADAPTER") ?: error("BB_SECRET_ADAPTER is not defined")
+        System.getenv("SQUAT_SECRET_ADAPTER") ?: error("SQUAT_SECRET_ADAPTER is not defined")
 
     val secretAdapter = SecretAdapter.getSecretAdapter(adapterType)
     secretAdapter.validate()

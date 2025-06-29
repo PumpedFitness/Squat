@@ -1,0 +1,12 @@
+version: '3'
+
+tasks:
+  up:
+    desc: Start Docker Compose services
+    cmds:
+      - docker-compose up -d
+
+  down:
+    desc: Stop Docker Compose services
+    cmds:
+      - docker-compose down
